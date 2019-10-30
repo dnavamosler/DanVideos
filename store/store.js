@@ -9,7 +9,8 @@ import { persistStore, persistReducer } from "redux-persist";
 // });
 const persistConfig = {
   key: "root",
-  storage: AsyncStorage
+  storage: AsyncStorage,
+  blacklist: ["selectedMovie"]
 };
 const persistedReducer = persistReducer(persistConfig, reducer);
 
