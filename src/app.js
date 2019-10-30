@@ -7,6 +7,7 @@ import CategoriesList from "./videos/containers/categories-list";
 import api from "../utils/api";
 import Movie from "./views/containers/movie";
 import { useSelector } from "react-redux";
+import Search from "./sections/containers/search";
 const AppLayout = ({ store }) => {
   // const [SuggestionsListData, setSuggestionsListData] = useState([]);
   // const [Categories, setCategories] = useState([]);
@@ -48,7 +49,7 @@ const AppLayout = ({ store }) => {
         <Home>
           <Header>{/* aqui hijos del header */}</Header>
 
-          <Text>Buscador</Text>
+          <Search />
 
           <CategoriesList />
 
