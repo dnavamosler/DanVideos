@@ -1,12 +1,21 @@
 import React from "react";
 
 import { TextInput, StyleSheet } from "react-native";
-
+import api from "../../../utils/api";
+import { useDispatch } from "react-redux";
 const Search = ({}) => {
   const [text, setText] = React.useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = () => {
-    console.log(text);
+  const handleSubmit = async () => {
+    const movies = await api.searchMovie(text);
+    console.log(movies);
+    dispatch({
+      type: "SET_SELECTED_MOVIE",
+      payload: {
+        movie: movies[0]
+      }
+    });
   };
   const handleChangeText = text => {
     setText(text);
