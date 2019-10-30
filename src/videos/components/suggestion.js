@@ -1,26 +1,35 @@
 import React from "react";
 
-import { View, Image, Text, StyleSheet } from "react-native";
-const Suggestions = ({ medium_cover_image, year, rating, genres, title }) => {
+import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
+const Suggestions = ({
+  medium_cover_image,
+  year,
+  rating,
+  genres,
+  title,
+  onPress
+}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.left}>
-        <Image
-          style={styles.cover}
-          source={{
-            uri: medium_cover_image
-          }}
-        />
-        <View style={styles.gender}>
-          <Text style={styles.genderText}>{genres[0]}</Text>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.left}>
+          <Image
+            style={styles.cover}
+            source={{
+              uri: medium_cover_image
+            }}
+          />
+          <View style={styles.gender}>
+            <Text style={styles.genderText}>{genres[0]}</Text>
+          </View>
+        </View>
+        <View style={styles.rigth}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.year}>{year}</Text>
+          <Text style={styles.rating}>{rating} Estrellas</Text>
         </View>
       </View>
-      <View style={styles.rigth}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.year}>{year}</Text>
-        <Text style={styles.rating}>{rating} Estrellas</Text>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
