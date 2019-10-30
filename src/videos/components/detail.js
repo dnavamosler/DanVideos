@@ -1,10 +1,16 @@
 import React from "react";
 
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { WebView } from "react-native-webview";
 
-const Details = ({ title, description_full, medium_cover_image }) => {
+const Details = ({
+  title,
+  description_full,
+  medium_cover_image,
+  yt_trailer_code
+}) => {
   return (
-    <View>
+    <ScrollView>
       <View style={styles.top}>
         <Text>{title}</Text>
       </View>
@@ -20,8 +26,15 @@ const Details = ({ title, description_full, medium_cover_image }) => {
 
           <Text style={styles.description}>{description_full}</Text>
         </View>
+        <View style={styles.trailer}>
+          <WebView
+            source={{
+              uri: `https://www.youtube.com/embed/${yt_trailer_code}`
+            }}
+          ></WebView>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
