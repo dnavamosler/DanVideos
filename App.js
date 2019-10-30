@@ -18,6 +18,7 @@ export default function App() {
   useEffect(() => {
     const getMovies = async () => {
       const movies = await api.getSuggestions(10);
+      console.log(movies);
       setSuggestionsListData(movies);
     };
 

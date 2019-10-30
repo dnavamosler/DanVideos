@@ -9,6 +9,7 @@ const SuggestionsList = ({ list }) => {
   const renderEmpty = () => <Empty text="No hay sugerencias 😥" />;
   const ItemSeparatorComponent = () => <Separator />;
   const renderItem = ({ item }) => <Suggestions {...item} />;
+  const keyExtractor = item => item.id.toString();
 
   return (
     <Layout title="Recomendado para ti">
@@ -17,7 +18,7 @@ const SuggestionsList = ({ list }) => {
         ItemSeparatorComponent={ItemSeparatorComponent}
         ListEmptyComponent={renderEmpty}
         renderItem={renderItem}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={keyExtractor}
       />
     </Layout>
   );
