@@ -25,6 +25,11 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "danmit.videos"
+    },
+    "description": "Danvideos",
+    "githubUrl": "https://github.com/dnavamosler/DanVideos"
   }
 }
