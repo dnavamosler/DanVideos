@@ -15,8 +15,7 @@ const SuggestionListLayout = ({ title, children }) => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 10,
-    minHeight: 300
+    paddingVertical: 10
   },
   title: {
     color: "#4c4c4c",
