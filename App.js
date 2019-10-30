@@ -10,6 +10,7 @@ import api from "./utils/api";
 import Player from "./src/player/container/player";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store/store";
+import Loading from "./src/sections/components/loading";
 export default function App() {
   //existe un if virtual en native para cambiar de plataforma
 
@@ -50,7 +51,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <PersistGate persistor={persistor} loading={<Text>cargando...</Text>}>
+      <PersistGate persistor={persistor} loading={<Loading />}>
         <Home>
           <Header>{/* aqui hijos del header */}</Header>
           <Player />
