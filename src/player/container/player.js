@@ -16,8 +16,6 @@ const Player = ({}) => {
         style={styles.player}
         useNativeControls
         resizeMode="contain"
-        shouldPlay
-        isLooping
       />
     </Layout>
   );
